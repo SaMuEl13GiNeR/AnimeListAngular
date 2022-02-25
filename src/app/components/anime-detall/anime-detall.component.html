@@ -1,0 +1,51 @@
+<a class="nav-link" id="home_link" aria-current="page" [routerLink]="['/home']" [routerLinkActive]="['active']">Back</a>
+
+
+
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">{{anime?.title}}</th>
+            <th scope="col"><a [href]="anime?.url"><img [src]="anime?.image_url" width="200" class="img-thumbnail"
+                        alt="Responsive image"></a> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Episodes:</th>
+            <ng-template #noEp>Airing</ng-template>
+            <td *ngIf="anime?.episodes != 0; else noEp ">{{anime?.episodes}}</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Score:</th>
+            <td>{{anime?.score}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Airing:</th>
+            <td>{{anime?.airing}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Type:</th>
+            <td>{{anime?.type}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Start Date:</th>
+            <td>{{anime?.start_date}}</td>
+        </tr>
+        <tr>
+            <th scope="row">End Date:</th>
+            <td>{{anime?.end_date}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Members:</th>
+            <td>{{anime?.members}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Synopsis:</th>
+            <td>{{anime?.synopsis}}</td>
+        </tr>
+    </tbody>
+</table>

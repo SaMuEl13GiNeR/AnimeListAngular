@@ -1,0 +1,33 @@
+<h2>Login:</h2>
+<form id="formLogin" #loginForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class='mb-3'>
+
+    <label for='email' class='form-label'>Correo electrónico</label>
+    <input matInput placeholder="Email" class='form-control' [(ngModel)]="username" name="username" required
+      minlength="3" #user="ngModel" [ngClass]="{
+      'is-valid': user.touched && user.valid,
+      'is-invalid': user.touched && !user.valid
+    }" />
+    <!-- {{username | json}} -->
+  </div>
+  <div *ngIf="user.touched && user.invalid" class="alert alert-danger">El nombre de usuario debe terner mínimo 3
+    carácteres</div>
+
+  <div class='mb-3'>
+    <label for='password' class='form-label'>Contraseña</label>
+
+    <input matInput type="password" placeholder="Password" class='form-control' [(ngModel)]="password" name="password"
+      required minlength="3" #pas="ngModel" [ngClass]="{
+        'is-valid': pas.touched && pas.valid,
+        'is-invalid': pas.touched && !pas.valid
+      }" />
+  </div>
+  <div *ngIf="pas.touched && pas.invalid" class="alert alert-danger">La contraseña debe terner mínimo 3
+    carácteres</div>
+
+  <span id="logError" style="color:red"></span><br><br>
+
+  <button id="boto" class='btn btn-primary'>Enviar</button>
+  <a role="button" class='btn btn-primary' id="registrar" [routerLink]="['/registre']"
+    [routerLinkActive]="['active']">Registrarse</a>
+</form>

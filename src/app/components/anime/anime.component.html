@@ -1,0 +1,20 @@
+<!-- <tr>
+    <td>` + animes[i].rated + `</td>
+    <td>` + i + `</td>
+    <td><a href="` + animes[i].url + `"><img src="` + animes[i].image_url + `" width="100" class="img-thumbnail"
+                alt="Responsive image"></a></td>
+    <td>` + animes[i].title + `</td>
+    <td>` + animes[i].score + `</td>
+    <td>` + animes[i].episodes + `</td>
+</tr> -->
+
+
+
+<td><a [routerLink]="['/anime-detall', anime?.mal_id]">
+        Detall</a></td>
+<td>{{anime?.mal_id}}</td>
+<td><a [href]="anime?.url"><img [src]="anime?.image_url" width="100" class="img-thumbnail" alt="Responsive image"></a>
+</td>
+<td>{{anime?.title}}</td>
+<td>{{anime?.score}}</td>
+<td>{{anime?.episodes}}</td>

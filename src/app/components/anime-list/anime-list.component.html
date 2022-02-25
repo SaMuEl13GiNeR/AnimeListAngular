@@ -1,0 +1,39 @@
+<ul class="nav justify-content-center">
+    <li class="nav-item">
+        <a class="nav-link active" href="#">Todos los Animes</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Viendo</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Completados</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">En pausa</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Abandonados</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Plan para ver</a>
+    </li>
+</ul>
+
+<div>
+    <table class="table ">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">#</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Puntuacion</th>
+                <th scope="col">Progreso</th>
+            </tr>
+        </thead>
+        <tbody id="json">
+            <tr app-anime *ngFor="let anime of animes;" [anime]="anime">
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,42 @@
+<h2>Regístrate si eres nuevo:</h2>
+<form id="formRegistre" #registreForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class='mb-3'>
+        <label for='nombre' class='form-label'>Nombre:</label>
+        <input type='text' name="nombre" class='form-control' id='nombre' aria-describedby='nombre' [(ngModel)]="nombre"
+            name="nombre">
+
+    </div>
+    <div class='mb-3'>
+        <label for='apellido' class='form-label'>Apellido:</label>
+        <input type='text' name="apellido" class='form-control' id='apellido' aria-describedby='apellido'
+            [(ngModel)]="apellido" name="apellido">
+
+    </div>
+    <div class='mb-3'>
+        <label for='email' class='form-label'>Correo electrónico:</label>
+        <input type='email' name="email" class='form-control' id='email' [(ngModel)]="username" name="username">
+
+    </div>
+
+    <div class='mb-3'>
+        <input id="list" name="list" type="hidden" value="list">
+        <label for='exampleInputPassword1' class='form-label'>Contraseña:</label>
+        <input type='password' name="password" class='form-control' id='password' [(ngModel)]="password"
+            name="password">
+    </div>
+    <div class='mb-3'>
+        <label for='exampleInputPassword2' class='form-label'>Comfirmar contraseña:</label>
+        <input type='password' name="passwordConfirm" class='form-control' id='passwordConfirm'>
+    </div>
+    <div class='mb-3'>
+        <label for='Rol' class='form-label'>Rol:</label>
+        <select class="form-select" name="rol" [(ngModel)]="rol" name="rol">
+            <option value="user" selected>Usuario</option>
+            <option value="invitado">Invitado</option>
+            <option value="admin" disabled>Admin</option>
+        </select>
+    </div>
+    <span id="logError" style="color:red"></span><br><br>
+    <button id="boto" class='btn btn-primary'>Registrarse</button>
+    <a class=' btn btn-primary' id="login" [routerLink]="['/login']" [routerLinkActive]="['active']">Login</a>
+</form>
